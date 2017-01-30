@@ -126,7 +126,7 @@ fooStream = streamRedirect.to;
 
 fooStream = _<Foo>();
 fooStream = _(fooArr);
-fooStream = _<Foo>((push, next) => {
+fooStream = _<Foo>((push: any, next: any) => {
 	push(null, foo);
 	push(err);
 	next();
@@ -405,3 +405,5 @@ fooStream = fooStream.debounce(num);
 fooStream = fooStream.latest();
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+fooStream.map((x) => {return x;}).mergeWithLimit(10).each((x) => {return x});

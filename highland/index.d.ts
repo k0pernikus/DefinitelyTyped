@@ -605,6 +605,8 @@ declare namespace Highland {
 		 */
 		map<U>(f: (x: R) => U): Stream<U>;
 
+		mergeWithLimit<U>(workerAmount: number): Stream<U>;
+
 		/**
 		 * Creates a new Stream of values by applying each item in a Stream to an
 		 * iterator function which may return a Stream. Each item on these result
@@ -618,6 +620,7 @@ declare namespace Highland {
 		 * @param {Function} f - the iterator function
 		 * @api public
 		 */
+
 		flatMap<U>(f: (x: R) => Stream<U>): Stream<U>;
 		flatMap<U>(f: (x: R) => U): Stream<U>;
 
